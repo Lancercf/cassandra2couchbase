@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/simplecassandra/src" modelPluginID="simplecassandra"
+    modelName="Cass" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cass.ecore</foreignModel>
+  <genPackages prefix="Cassandra" resource="XML" disposableProviderFactory="true"
+      ecorePackage="cass.ecore#/">
+    <genDataTypes ecoreDataType="cass.ecore#//Timestamp"/>
+    <genDataTypes ecoreDataType="cass.ecore#//Blob"/>
+    <genDataTypes ecoreDataType="cass.ecore#//BigDecimal"/>
+    <genClasses ecoreClass="cass.ecore#//Keyspace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//Keyspace/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cass.ecore#//Keyspace/columnfamilies"/>
+    </genClasses>
+    <genClasses ecoreClass="cass.ecore#//ColumnFamily">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//ColumnFamily/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cass.ecore#//ColumnFamily/rows"/>
+    </genClasses>
+    <genClasses ecoreClass="cass.ecore#//Row">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//Row/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cass.ecore#//Row/columns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cass.ecore#//Row/supercolumns"/>
+    </genClasses>
+    <genClasses ecoreClass="cass.ecore#//Column">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//Column/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//Column/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//Column/timestamp"/>
+    </genClasses>
+    <genClasses ecoreClass="cass.ecore#//SuperColumn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//SuperColumn/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cass.ecore#//SuperColumn/columns"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cass.ecore#//DataTypes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/BytesType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/AsciiType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/UTF8Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/Int32Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/InetAddressType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/LongType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/UUIDType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/TimeUUIDType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/DateType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/BooleanType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/FloatType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/DoubleType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/CounterColumnType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cass.ecore#//DataTypes/DecimalType"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

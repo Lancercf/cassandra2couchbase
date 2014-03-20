@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cassandra -->
+      <package
+            uri="http://cass/1.0"
+            class="cassandra.CassandraPackage"
+            genModel="model/cassandra.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated cassandra -->
+      <parser
+            type="cassandra"
+            class="cassandra.util.CassandraResourceFactoryImpl"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Couchbase -->
+      <package
+            uri="couchbase"
+            class="couchbase.CouchbasePackage"
+            genModel="model/Couchbase.genmodel"/>
+   </extension>
+
+</plugin>
